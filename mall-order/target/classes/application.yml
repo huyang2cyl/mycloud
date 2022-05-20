@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: nacos-provider-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.1.105:8848
+      config:
+        server-addr: http://192.168.1.105:8848
+        namespace: fat
+  profiles:
+    active: fat
+
+#    alibaba:
+#      seata:
+#        tx-service-group: fsp_tx_group #全局事务组名称
+
+  datasource: #数据源配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.105:3606/seata_account
+    username: root
+    password: 123456
+
+mybatis: #mapper扫描地址
+  mapperLocations: classpath:mapper/*.xml
+server:
+  port: 8081
+
+
